@@ -26,10 +26,6 @@
   width: 250px;
 }
 
-.product:hover img {
-  width: 300px;
-}
-
 .product .description {
   text-align: center;
 }

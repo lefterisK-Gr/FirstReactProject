@@ -1,9 +1,12 @@
 .App {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.Sidebar {
-  height: 100%;
-  width: 300px;
-  background-color: aqua;
+.MainContent {
+  display: grid;
+  grid-template-columns: 1fr 250px; /* Define two columns, one for content and one for the sidebar */
+  grid-gap: 20px; /* Add some spacing between columns */
+  width: 100%;
 }
