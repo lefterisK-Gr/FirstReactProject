@@ -17,6 +17,7 @@ export const SidebarCartItem = (props) => {
         <div className="sidebar-countHandler">
           <button onClick={() => removeFromCart(id)}> - </button>
           <input
+            data-testid="sidebar_cart-item"
             value={cartItems[id]}
             onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
           />

@@ -2,18 +2,24 @@ import React, { useContext } from "react";
 import { PRODUCTS } from "../products";
 import { ShopContext } from "../context/shop-context";
 import { SidebarCartItem } from "./sidebar_cart-item";
+import { DiscountNotification } from "./discountNotification";
 import XMLExport from "./XMLExport";
 import "./sidebar_cart.css";
 
 import { useNavigate } from "react-router-dom";
 
 export const SidebarCart = () => {
-  const { cartItems, getTotalCartAmount, getNewJSONdata } =
-    useContext(ShopContext);
+  const {
+    cartItems,
+    getTotalCartAmount,
+    getNewJSONdata,
+    cartDiscount,
+    cartDiscountPopup,
+    setCartDiscountPopup,
+  } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
   const xmlData = getNewJSONdata();
 
-  const navigate = useNavigate();
   return (
     <div className="sidebar">
       <div className="sidebar-cart">
@@ -26,6 +32,10 @@ export const SidebarCart = () => {
         ) : (
           <h1>Your Cart is Empty</h1>
         )}
+        <DiscountNotification
+          trigger={cartDiscountPopup}
+          setTrigger={setCartDiscountPopup}
+        />
         <div>
           <h1>Your Cart Items</h1>
         </div>

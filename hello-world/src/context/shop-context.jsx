@@ -14,6 +14,7 @@ const getDefaultCart = () => {
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart()); // Use state needs array of 2 elements, one is the object and second function that updates it
   const [cartDiscount, setCartDiscount] = useState(false);
+  const [cartDiscountPopup, setCartDiscountPopup] = useState(false);
 
   // useEffect to Save on Refresh
   useEffect(() => {
@@ -55,6 +56,7 @@ export const ShopContextProvider = (props) => {
       } else {
         if (totalPrice > 100) {
           updatedDiscount = true;
+          setCartDiscountPopup(true);
         }
       }
       return updatedDiscount;
@@ -124,6 +126,9 @@ export const ShopContextProvider = (props) => {
     updateCartItemCount,
     getTotalCartAmount,
     getNewJSONdata,
+    cartDiscount,
+    cartDiscountPopup,
+    setCartDiscountPopup,
   };
 
   console.log(cartItems);
