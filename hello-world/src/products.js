@@ -41,7 +41,7 @@ export const PRODUCTS = [
   {
     id: 6,
     productName: "SPECTRUM LS TEE",
-    price: 68.0,
+    price: 10.0,
     productImage: product6,
   },
   {
